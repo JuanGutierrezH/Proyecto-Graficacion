@@ -30,6 +30,7 @@
         {
             this.btnDibujar = new System.Windows.Forms.Button();
             this.btnDetener = new System.Windows.Forms.Button();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.SuspendLayout();
             // 
             // btnDibujar
@@ -51,12 +52,21 @@
             this.btnDetener.Text = "Detener";
             this.btnDetener.UseVisualStyleBackColor = true;
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Location = new System.Drawing.Point(275, 182);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton1.TabIndex = 2;
+            this.simpleButton1.Text = "SUPERXD";
+            // 
             // Traslacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(784, 761);
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.btnDetener);
             this.Controls.Add(this.btnDibujar);
             this.Name = "Traslacion";
@@ -70,5 +80,6 @@
 
         private System.Windows.Forms.Button btnDibujar;
         private System.Windows.Forms.Button btnDetener;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }
