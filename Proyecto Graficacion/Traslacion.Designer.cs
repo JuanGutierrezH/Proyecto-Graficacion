@@ -32,6 +32,7 @@
             this.btnDetener = new System.Windows.Forms.Button();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // btnDibujar
@@ -72,12 +73,23 @@
             this.radioButton1.Text = "radioButton1";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(323, 328);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(59, 13);
+            this.linkLabel1.TabIndex = 4;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Hello world";
+            // 
             // Traslacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(784, 761);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.btnDetener);
@@ -96,5 +108,6 @@
         private System.Windows.Forms.Button btnDetener;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
