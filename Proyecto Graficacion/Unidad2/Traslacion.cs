@@ -52,13 +52,13 @@ namespace Proyecto_Graficacion
                 dibujo.DrawRectangle(pluma, cuadro1);
                 dibujo.DrawRectangle(pluma, cuadro2);
                 dibujo2.DrawRectangle(pluma, cuadro3);
-                dibujo.DrawRectangle(pluma, ghostCuadro);
-                Thread.Sleep(20);
+                //dibujo.DrawRectangle(pluma, ghostCuadro);
+                Thread.Sleep(50);
 
                 cuadro1 = new Rectangle(cuadro1.X - dx, cuadro1.Y - dy, 100, 100);
                 cuadro2 = new Rectangle(cuadro2.X, cuadro2.Y - dy, 100, 100);
                 cuadro3 = new Rectangle(cuadro3.X + dx, cuadro3.Y - dy , 100, 100);
-                ghostCuadro = new Rectangle(ghostCuadro.X + dx, ghostCuadro.Y, 1, 1);
+                //ghostCuadro = new Rectangle(ghostCuadro.X + dx, ghostCuadro.Y, 1, 1);
             }
             for (int j = 0; j < numIteraciones; j++)
             {
@@ -66,14 +66,14 @@ namespace Proyecto_Graficacion
                 dibujo.DrawRectangle(pluma, cuadro1);
                 dibujo.DrawRectangle(pluma, cuadro2);
                 dibujo2.DrawRectangle(pluma, cuadro3);
-                dibujo.DrawRectangle(pluma, ghostCuadro);
+                //dibujo.DrawRectangle(pluma, ghostCuadro);
 
-                Thread.Sleep(20);
+                Thread.Sleep(50);
 
                 cuadro1 = new Rectangle(cuadro1.X + dx, cuadro1.Y + dy, 100, 100);
                 cuadro2 = new Rectangle(cuadro2.X, cuadro2.Y + dy, 100, 100);
                 cuadro3 = new Rectangle(cuadro3.X - dx, cuadro3.Y + dy, 100, 100);
-                ghostCuadro = new Rectangle(ghostCuadro.X + dx, ghostCuadro.Y, 1, 1);
+                //ghostCuadro = new Rectangle(ghostCuadro.X + dx, ghostCuadro.Y, 1, 1);
             }
         }
 
