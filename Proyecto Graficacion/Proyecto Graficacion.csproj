@@ -84,10 +84,16 @@
     <Compile Include="TrackBar.Designer.cs">
       <DependentUpon>TrackBar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Traslacion.cs">
+    <Compile Include="Unidad2\Escalamiento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Traslacion.Designer.cs">
+    <Compile Include="Unidad2\Escalamiento.Designer.cs">
+      <DependentUpon>Escalamiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Unidad2\Traslacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Unidad2\Traslacion.Designer.cs">
       <DependentUpon>Traslacion.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Menu.resx">
@@ -114,7 +120,7 @@
     <EmbeddedResource Include="TrackBar.resx">
       <DependentUpon>TrackBar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Traslacion.resx">
+    <EmbeddedResource Include="Unidad2\Traslacion.resx">
       <DependentUpon>Traslacion.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
