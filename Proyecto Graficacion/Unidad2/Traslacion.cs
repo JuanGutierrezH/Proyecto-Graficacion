@@ -42,7 +42,7 @@ namespace Proyecto_Graficacion
 
         private void DibujarCuadros()
         {
-            int numIteraciones = 50;
+            int numIteraciones = 40;
             int dy = 3;
             int dx = 3;
 
