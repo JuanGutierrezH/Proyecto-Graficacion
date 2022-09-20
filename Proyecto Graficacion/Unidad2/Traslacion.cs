@@ -38,6 +38,7 @@ namespace Proyecto_Graficacion
         {
             Thread t = new Thread(DibujarCuadros);
             t.Start();
+            progressBar1.PerformStep();
         }
 
         private void DibujarCuadros()
@@ -45,34 +46,40 @@ namespace Proyecto_Graficacion
             int numIteraciones = 40;
             int dy = 3;
             int dx = 3;
+            
 
-            for (int i = 0; i < numIteraciones; i++)
+            for (int k = 1; k < 3; k++)
             {
-                dibujo.Clear(System.Drawing.ColorTranslator.FromHtml("#404040"));
-                dibujo.FillRectangle(brush, cuadro1);
-                dibujo.FillRectangle(brush, cuadro2);
-                dibujo.FillRectangle(brush, cuadro3);
-                dibujo.DrawRectangle(pluma, ghostCuadro);
-                Thread.Sleep(20);
+                for (int i = 0; i < numIteraciones; i++)
+                {
+                    dibujo.Clear(System.Drawing.ColorTranslator.FromHtml("#404040"));
+                    dibujo.FillRectangle(brush, cuadro1);
+                    dibujo.FillRectangle(brush, cuadro2);
+                    dibujo.FillRectangle(brush, cuadro3);
+                    dibujo.DrawRectangle(pluma, ghostCuadro);
+                    Thread.Sleep(20);
 
-                cuadro1 = new Rectangle(cuadro1.X - dx, cuadro1.Y - dy, 100, 100);
-                cuadro2 = new Rectangle(cuadro2.X, cuadro2.Y - 2*dy, 100, 100);
-                cuadro3 = new Rectangle(cuadro3.X + dx, cuadro3.Y - dy , 100, 100);
-                ghostCuadro = new Rectangle(ghostCuadro.X + dx, ghostCuadro.Y, 1, 1);
-            }
-            for (int j = 0; j < numIteraciones; j++)
-            {
-                dibujo.Clear(System.Drawing.ColorTranslator.FromHtml("#404040"));
-                dibujo.FillRectangle(brush, cuadro1);
-                dibujo.FillRectangle(brush, cuadro2);
-                dibujo.FillRectangle(brush, cuadro3);
-                dibujo.DrawRectangle(pluma, ghostCuadro);
-                Thread.Sleep(20);
+                    cuadro1 = new Rectangle(cuadro1.X - dx, cuadro1.Y - dy, 100, 100);
+                    cuadro2 = new Rectangle(cuadro2.X, cuadro2.Y - 2 * dy, 100, 100);
+                    cuadro3 = new Rectangle(cuadro3.X + dx, cuadro3.Y - dy, 100, 100);
+                    ghostCuadro = new Rectangle(ghostCuadro.X + dx, ghostCuadro.Y, 1, 1);
+                }
+                for (int j = 0; j < numIteraciones; j++)
+                {
+                    dibujo.Clear(System.Drawing.ColorTranslator.FromHtml("#404040"));
+                    dibujo.FillRectangle(brush, cuadro1);
+                    dibujo.FillRectangle(brush, cuadro2);
+                    dibujo.FillRectangle(brush, cuadro3);
+                    dibujo.DrawRectangle(pluma, ghostCuadro);
+                    Thread.Sleep(20);
 
-                cuadro1 = new Rectangle(cuadro1.X + dx, cuadro1.Y + dy, 100, 100);
-                cuadro2 = new Rectangle(cuadro2.X, cuadro2.Y + 2 * dy, 100, 100);
-                cuadro3 = new Rectangle(cuadro3.X - dx, cuadro3.Y + dy, 100, 100);
-                ghostCuadro = new Rectangle(ghostCuadro.X + dx, ghostCuadro.Y, 1, 1);
+                    cuadro1 = new Rectangle(cuadro1.X + dx, cuadro1.Y + dy, 100, 100);
+                    cuadro2 = new Rectangle(cuadro2.X, cuadro2.Y + 2 * dy, 100, 100);
+                    cuadro3 = new Rectangle(cuadro3.X - dx, cuadro3.Y + dy, 100, 100);
+                    ghostCuadro = new Rectangle(ghostCuadro.X + dx, ghostCuadro.Y, 1, 1);
+                }
+
+                
             }
         }
 

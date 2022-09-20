@@ -23,85 +23,72 @@ namespace Proyecto_Graficacion.Unidad2
         Pen pluma = new Pen(Color.Black, 4);
         Brush brush = new SolidBrush(System.Drawing.ColorTranslator.FromHtml("#7A3EB1"));
 
-
         private void Escalamiento_Load(object sender, EventArgs e)
         {
             dibujo = this.CreateGraphics();
         }
 
-        private void btnDibujar_Click(object sender, EventArgs e)
-        {
-            dibujo.Clear(System.Drawing.ColorTranslator.FromHtml("#404040"));
-            dibujo = this.CreateGraphics();
-            int circleWH = 110;
-            dibujo.TranslateTransform(100, 100);
-
-            dibujo.FillEllipse(brush, 145, 245, circleWH, circleWH);
-            dibujo.DrawEllipse(pluma, 90, 245, circleWH, circleWH);
-            dibujo.DrawEllipse(pluma, 200, 245, circleWH, circleWH);
-
-            dibujo.DrawEllipse(pluma, 90, 190, 220, 220);
-            dibujo.DrawEllipse(pluma, 174, 198, circleWH, circleWH);
-            dibujo.DrawEllipse(pluma, 115, 198, circleWH, circleWH);
-            dibujo.DrawEllipse(pluma, 173, 290, circleWH, circleWH);
-            dibujo.DrawEllipse(pluma, 116, 290, circleWH, circleWH);
-            dibujo.DrawEllipse(pluma, 145, 245, circleWH, circleWH);
-            dibujo.DrawEllipse(pluma, 103, 204, 190, 190);
-
-            dibujo.DrawLine(pluma, 200, 300, 310, 300);
-            dibujo.DrawLine(pluma, 200, 300, 200, 190);
-            dibujo.DrawLine(pluma, 200, 300, 90, 300);
-            dibujo.DrawLine(pluma, 200, 300, 200, 410);
-            dibujo.DrawLine(pluma, 200, 300, 145, 396);
-            dibujo.DrawLine(pluma, 200, 300, 255, 396);
-            dibujo.DrawLine(pluma, 200, 300, 105, 356);
-            dibujo.DrawLine(pluma, 200, 300, 105, 245);
-            dibujo.DrawLine(pluma, 200, 300, 145, 203);
-            dibujo.DrawLine(pluma, 200, 300, 255, 205);
-            dibujo.DrawLine(pluma, 200, 300, 296, 245);
-            dibujo.DrawLine(pluma, 200, 300, 296, 356);
-        }
-
         private void btnEscalar_Click(object sender, EventArgs e)
         {
+            dibujo = this.CreateGraphics();
+            dibujo.TranslateTransform(200, 100);
             dibujo.Clear(System.Drawing.ColorTranslator.FromHtml("#404040"));
             int fS = Decimal.ToInt32(nud1.Value);
+            int circleWH = 110;
 
-            if (fS == 0)
-            {
-                return;
-            }
+            //if (fS == 0)
+            //{
 
-            dibujo.FillEllipse(brush, (145 * fS) + (1 - fS) * 200, (245 * fS) + (1 - fS) * 300, 110 * fS, 110 * fS);
-            dibujo.DrawEllipse(pluma, (90 * fS) + (1 - fS) * 200, (245 * fS) + (1 - fS) * 300, 110 * fS, 110 * fS);
-            dibujo.DrawEllipse(pluma, (200 * fS) + (1 - fS) * 200, (245 * fS) + (1 - fS) * 300, 110 * fS, 110 * fS);
-            dibujo.DrawEllipse(pluma, (174 * fS) + (1 - fS) * 200, (198 * fS) + (1 - fS) * 300, 110 * fS, 110 * fS);
-            dibujo.DrawEllipse(pluma, (115 * fS) + (1 - fS) * 200, (198 * fS) + (1 - fS) * 300, 110 * fS, 110 * fS);
-            dibujo.DrawEllipse(pluma, (173 * fS) + (1 - fS) * 200, (290 * fS) + (1 - fS) * 300, 110 * fS, 110 * fS);
-            dibujo.DrawEllipse(pluma, (116 * fS) + (1 - fS) * 200, (290 * fS) + (1 - fS) * 300, 110 * fS, 110 * fS);
-            dibujo.DrawEllipse(pluma, (145 * fS) + (1 - fS) * 200, (245 * fS) + (1 - fS) * 300, 110 * fS, 110 * fS);
+            //}
 
-            dibujo.DrawEllipse(pluma, (90 * fS) + (1 - fS) * 200, (190 * fS) + (1 - fS) * 300, 220 * fS, 220 * fS);
-            dibujo.DrawEllipse(pluma, (103 * fS) + (1 - fS) * 200, (204 * fS) + (1 - fS) * 300, 190 * fS, 190 * fS);
+            dibujo.FillEllipse(brush, FormulaCoordx(145), FormulaCoordy(245), circleWH * fS, circleWH * fS);
+            dibujo.DrawEllipse(pluma, FormulaCoordx(90), FormulaCoordy(245), circleWH * fS, circleWH * fS);
+            dibujo.DrawEllipse(pluma, FormulaCoordx(200), FormulaCoordy(245), circleWH * fS, circleWH * fS);
+            dibujo.DrawEllipse(pluma, FormulaCoordx(174), FormulaCoordy(198), circleWH * fS, circleWH * fS);
+            dibujo.DrawEllipse(pluma, FormulaCoordx(115), FormulaCoordy(198), circleWH * fS, circleWH * fS);
+            dibujo.DrawEllipse(pluma, FormulaCoordx(173), FormulaCoordy(290), circleWH * fS, circleWH * fS);
+            dibujo.DrawEllipse(pluma, FormulaCoordx(116), FormulaCoordy(290), circleWH * fS, circleWH * fS);
+            dibujo.DrawEllipse(pluma, FormulaCoordx(145), FormulaCoordy(245), circleWH * fS, circleWH * fS);
 
-            dibujo.DrawLine(pluma, 200, 300, (310 * fS) + (1 - fS) * 200, (300 * fS) + (1 - fS) * 300);
-            dibujo.DrawLine(pluma, 200, 300, (200 * fS) + (1 - fS) * 200, (190 * fS) + (1 - fS) * 300);
-            dibujo.DrawLine(pluma, 200, 300, (90 * fS) + (1 - fS) * 200, (300 * fS) + (1 - fS) * 300);
-            dibujo.DrawLine(pluma, 200, 300, (200 * fS) + (1 - fS) * 200, (410 * fS) + (1 - fS) * 300);
-            dibujo.DrawLine(pluma, 200, 300, (145 * fS) + (1 - fS) * 200, (396 * fS) + (1 - fS) * 300);
-            dibujo.DrawLine(pluma, 200, 300, (255 * fS) + (1 - fS) * 200, (396 * fS) + (1 - fS) * 300);
-            dibujo.DrawLine(pluma, 200, 300, (105 * fS) + (1 - fS) * 200, (356 * fS) + (1 - fS) * 300);
-            dibujo.DrawLine(pluma, 200, 300, (105 * fS) + (1 - fS) * 200, (245 * fS) + (1 - fS) * 300);
-            dibujo.DrawLine(pluma, 200, 300, (145 * fS) + (1 - fS) * 200, (203 * fS) + (1 - fS) * 300);
-            dibujo.DrawLine(pluma, 200, 300, (255 * fS) + (1 - fS) * 200, (205 * fS) + (1 - fS) * 300);
-            dibujo.DrawLine(pluma, 200, 300, (296 * fS) + (1 - fS) * 200, (245 * fS) + (1 - fS) * 300);
-            dibujo.DrawLine(pluma, 200, 300, (296 * fS) + (1 - fS) * 200, (356 * fS) + (1 - fS) * 300);
+            dibujo.DrawEllipse(pluma, FormulaCoordx(90), FormulaCoordy(190), 220 * fS, 220 * fS);
+            dibujo.DrawEllipse(pluma, FormulaCoordx(103), FormulaCoordy(204), 190 * fS, 190 * fS);
+
+            dibujo.DrawLine(pluma, 200, 300, FormulaCoordx(310), FormulaCoordy(300)); 
+            dibujo.DrawLine(pluma, 200, 300, FormulaCoordx(200), FormulaCoordy(190));
+            dibujo.DrawLine(pluma, 200, 300, FormulaCoordx(90), FormulaCoordy(300));
+            dibujo.DrawLine(pluma, 200, 300, FormulaCoordx(200), FormulaCoordy(410));
+            dibujo.DrawLine(pluma, 200, 300, FormulaCoordx(145), FormulaCoordy(396));
+            dibujo.DrawLine(pluma, 200, 300, FormulaCoordx(255), FormulaCoordy(396));
+            dibujo.DrawLine(pluma, 200, 300, FormulaCoordx(105), FormulaCoordy(356));
+            dibujo.DrawLine(pluma, 200, 300, FormulaCoordx(105), FormulaCoordy(245));
+            dibujo.DrawLine(pluma, 200, 300, FormulaCoordx(145), FormulaCoordy(203));
+            dibujo.DrawLine(pluma, 200, 300, FormulaCoordx(255), FormulaCoordy(205));
+            dibujo.DrawLine(pluma, 200, 300, FormulaCoordx(296), FormulaCoordy(245));
+            dibujo.DrawLine(pluma, 200, 300, FormulaCoordx(296), FormulaCoordy(356));
         }
 
         private void Escalamiento_FormClosing(object sender, FormClosingEventArgs e)
         {
             Menu menu = new Menu();
             menu.Show();
+        }
+
+        private int FormulaCoordx(int num)
+        {
+            int fS = Decimal.ToInt32(nud1.Value);
+            int xF = 200;
+            int nuevaCoord = (num * fS) + (1 - fS) * xF;
+
+            return nuevaCoord;
+        }
+
+        private int FormulaCoordy(int num)
+        {
+            int fS = Decimal.ToInt32(nud1.Value);
+            int yF = 300;
+            int nuevaCoord = (num * fS) + (1 - fS) * yF;
+
+            return nuevaCoord;
         }
     }
 }

@@ -30,6 +30,7 @@
         {
             this.btnDibujar = new System.Windows.Forms.Button();
             this.btnDetener = new System.Windows.Forms.Button();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
             // btnDibujar
@@ -52,12 +53,22 @@
             this.btnDetener.UseVisualStyleBackColor = true;
             this.btnDetener.Click += new System.EventHandler(this.btnDetener_Click);
             // 
+            // progressBar1
+            // 
+            this.progressBar1.ForeColor = System.Drawing.Color.Lime;
+            this.progressBar1.Location = new System.Drawing.Point(299, 552);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(366, 23);
+            this.progressBar1.Step = 33;
+            this.progressBar1.TabIndex = 4;
+            // 
             // Traslacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(975, 597);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.btnDetener);
             this.Controls.Add(this.btnDibujar);
             this.Name = "Traslacion";
@@ -72,5 +83,6 @@
 
         private System.Windows.Forms.Button btnDibujar;
         private System.Windows.Forms.Button btnDetener;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
