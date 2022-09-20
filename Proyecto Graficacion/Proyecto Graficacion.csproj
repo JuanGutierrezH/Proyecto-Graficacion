@@ -58,30 +58,30 @@
     <Compile Include="Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pixe.cs">
+    <Compile Include="Unidad1\Pixe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pixe.Designer.cs">
+    <Compile Include="Unidad1\Pixe.Designer.cs">
       <DependentUpon>Pixe.cs</DependentUpon>
     </Compile>
-    <Compile Include="Polygon.cs">
+    <Compile Include="Unidad1\Polygon.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Polygon.Designer.cs">
+    <Compile Include="Unidad1\Polygon.Designer.cs">
       <DependentUpon>Polygon.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sierpinsky.cs">
+    <Compile Include="Unidad1\Sierpinsky.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sierpinsky.Designer.cs">
+    <Compile Include="Unidad1\Sierpinsky.Designer.cs">
       <DependentUpon>Sierpinsky.cs</DependentUpon>
     </Compile>
-    <Compile Include="TrackBar.cs">
+    <Compile Include="Unidad1\TrackBar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TrackBar.Designer.cs">
+    <Compile Include="Unidad1\TrackBar.Designer.cs">
       <DependentUpon>TrackBar.cs</DependentUpon>
     </Compile>
     <Compile Include="Unidad2\Escalamiento.cs">
@@ -99,10 +99,10 @@
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pixe.resx">
+    <EmbeddedResource Include="Unidad1\Pixe.resx">
       <DependentUpon>Pixe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Polygon.resx">
+    <EmbeddedResource Include="Unidad1\Polygon.resx">
       <DependentUpon>Polygon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -114,11 +114,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Sierpinsky.resx">
+    <EmbeddedResource Include="Unidad1\Sierpinsky.resx">
       <DependentUpon>Sierpinsky.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TrackBar.resx">
+    <EmbeddedResource Include="Unidad1\TrackBar.resx">
       <DependentUpon>TrackBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Unidad2\Escalamiento.resx">
+      <DependentUpon>Escalamiento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Unidad2\Traslacion.resx">
       <DependentUpon>Traslacion.cs</DependentUpon>

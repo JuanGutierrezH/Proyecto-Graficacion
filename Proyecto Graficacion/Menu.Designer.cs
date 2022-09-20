@@ -34,10 +34,11 @@
             this.perroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trackBarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sierpinskyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.unidad2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.traslaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.escaladoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,30 +67,46 @@
             // espadaToolStripMenuItem
             // 
             this.espadaToolStripMenuItem.Name = "espadaToolStripMenuItem";
-            this.espadaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.espadaToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.espadaToolStripMenuItem.Text = "1.- Espada";
             this.espadaToolStripMenuItem.Click += new System.EventHandler(this.espadaToolStripMenuItem_Click);
             // 
             // perroToolStripMenuItem
             // 
             this.perroToolStripMenuItem.Name = "perroToolStripMenuItem";
-            this.perroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.perroToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.perroToolStripMenuItem.Text = "2.- Perro";
             this.perroToolStripMenuItem.Click += new System.EventHandler(this.perroToolStripMenuItem_Click);
             // 
             // trackBarToolStripMenuItem
             // 
             this.trackBarToolStripMenuItem.Name = "trackBarToolStripMenuItem";
-            this.trackBarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.trackBarToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.trackBarToolStripMenuItem.Text = "3.- TrackBar";
             this.trackBarToolStripMenuItem.Click += new System.EventHandler(this.trackBarToolStripMenuItem_Click);
             // 
             // sierpinskyToolStripMenuItem
             // 
             this.sierpinskyToolStripMenuItem.Name = "sierpinskyToolStripMenuItem";
-            this.sierpinskyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sierpinskyToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.sierpinskyToolStripMenuItem.Text = "4.- Sierpinsky";
             this.sierpinskyToolStripMenuItem.Click += new System.EventHandler(this.sierpinskyToolStripMenuItem_Click);
+            // 
+            // unidad2ToolStripMenuItem
+            // 
+            this.unidad2ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.traslaciónToolStripMenuItem,
+            this.escaladoToolStripMenuItem});
+            this.unidad2ToolStripMenuItem.Name = "unidad2ToolStripMenuItem";
+            this.unidad2ToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.unidad2ToolStripMenuItem.Text = "Unidad 2";
+            // 
+            // traslaciónToolStripMenuItem
+            // 
+            this.traslaciónToolStripMenuItem.Name = "traslaciónToolStripMenuItem";
+            this.traslaciónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.traslaciónToolStripMenuItem.Text = "Traslación";
+            this.traslaciónToolStripMenuItem.Click += new System.EventHandler(this.traslaciónToolStripMenuItem_Click);
             // 
             // label1
             // 
@@ -111,20 +128,12 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Juan Ramiro Gutiérrez";
             // 
-            // unidad2ToolStripMenuItem
+            // escaladoToolStripMenuItem
             // 
-            this.unidad2ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.traslaciónToolStripMenuItem});
-            this.unidad2ToolStripMenuItem.Name = "unidad2ToolStripMenuItem";
-            this.unidad2ToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
-            this.unidad2ToolStripMenuItem.Text = "Unidad 2";
-            // 
-            // traslaciónToolStripMenuItem
-            // 
-            this.traslaciónToolStripMenuItem.Name = "traslaciónToolStripMenuItem";
-            this.traslaciónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.traslaciónToolStripMenuItem.Text = "Traslación";
-            this.traslaciónToolStripMenuItem.Click += new System.EventHandler(this.traslaciónToolStripMenuItem_Click);
+            this.escaladoToolStripMenuItem.Name = "escaladoToolStripMenuItem";
+            this.escaladoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.escaladoToolStripMenuItem.Text = "Escalado";
+            this.escaladoToolStripMenuItem.Click += new System.EventHandler(this.escaladoToolStripMenuItem_Click);
             // 
             // Menu
             // 
@@ -158,5 +167,6 @@
         private System.Windows.Forms.ToolStripMenuItem sierpinskyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem unidad2ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem traslaciónToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem escaladoToolStripMenuItem;
     }
 }

@@ -62,6 +62,7 @@
             this.Controls.Add(this.btnDibujar);
             this.Name = "Traslacion";
             this.Text = "Traslacion";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Traslacion_FormClosing);
             this.Load += new System.EventHandler(this.Traslacion_Load);
             this.ResumeLayout(false);
 

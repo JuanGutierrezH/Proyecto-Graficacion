@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto_Graficacion.Unidad2;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -55,6 +56,13 @@ namespace Proyecto_Graficacion
             this.Hide();
             Traslacion traslacion = new Traslacion();
             traslacion.Show();
+        }
+
+        private void escaladoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Escalamiento escalamiento = new Escalamiento();
+            escalamiento.Show();
         }
     }
 }
