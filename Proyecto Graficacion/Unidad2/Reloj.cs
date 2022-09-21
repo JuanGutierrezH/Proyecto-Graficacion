@@ -34,10 +34,7 @@ namespace Proyecto_Graficacion.Unidad2
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            
-        }
+        
 
         private void btnIniciar_Click(object sender, EventArgs e)
         {
