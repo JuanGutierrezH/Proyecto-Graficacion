@@ -64,5 +64,12 @@ namespace Proyecto_Graficacion
             Escalamiento escalamiento = new Escalamiento();
             escalamiento.Show();
         }
+
+        private void relojToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Reloj reloj = new Reloj();
+            reloj.Show();
+        }
     }
 }

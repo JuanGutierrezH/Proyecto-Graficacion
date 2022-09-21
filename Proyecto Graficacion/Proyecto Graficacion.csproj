@@ -90,6 +90,12 @@
     <Compile Include="Unidad2\Escalamiento.Designer.cs">
       <DependentUpon>Escalamiento.cs</DependentUpon>
     </Compile>
+    <Compile Include="Unidad2\Reloj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Unidad2\Reloj.Designer.cs">
+      <DependentUpon>Reloj.cs</DependentUpon>
+    </Compile>
     <Compile Include="Unidad2\Traslacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Unidad2\Escalamiento.resx">
       <DependentUpon>Escalamiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Unidad2\Reloj.resx">
+      <DependentUpon>Reloj.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Unidad2\Traslacion.resx">
       <DependentUpon>Traslacion.cs</DependentUpon>
