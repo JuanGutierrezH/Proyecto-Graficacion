@@ -25,7 +25,7 @@ namespace Proyecto_Graficacion.Unidad2
         private void DosCuadros_Load(object sender, EventArgs e)
         {
             dibujo = this.CreateGraphics();
-            dibujo.TranslateTransform(301, 301);
+            //dibujo.TranslateTransform(301, 301);
         }
 
         private void btnDibujar_Click(object sender, EventArgs e)
@@ -56,10 +56,13 @@ namespace Proyecto_Graficacion.Unidad2
                 cuadro12 = new Point(formulaX(cuadro12.X, cuadro12.Y, angle), formulaY(cuadro12.X, cuadro12.Y, angle));
                 cuadro13 = new Point(formulaX(cuadro13.X, cuadro13.Y, angle), formulaY(cuadro13.X, cuadro13.Y, angle));
                 cuadro14 = new Point(formulaX(cuadro14.X, cuadro14.Y, angle), formulaY(cuadro14.X, cuadro14.Y, angle));
-                cuadro1 = { cuadro11, cuadro12, cuadro13, cuadro14 };
+                cuadro1[0] = cuadro11;
+                cuadro1[1] = cuadro12;
+                cuadro1[2] = cuadro13;
+                cuadro1[3] = cuadro14;
                 //cuadro1 = new Rectangle(formulaX(cuadro1.X, cuadro1.Y), formulaX(cuadro1.X, cuadro1.Y), 300, 300);
                 dibujo.DrawPolygon(pluma, cuadro1);
-                Thread.Sleep(20);
+                Thread.Sleep(2000);
             }
         }
 
@@ -68,9 +71,9 @@ namespace Proyecto_Graficacion.Unidad2
         {
             double Cos = Math.Cos(angle);
             double Sen = Math.Sin(angle);
-            double xF = 0;
-            double yF = 0;
-            double newCoord = xF + ((numX - xF) * Cos) + ((numY - yF) * Sen);
+            double xF = 301;
+            double yF = 301;
+            double newCoord = (xF + ((numX - xF) * Cos)) + ((numY - yF) * Sen);
 
             return Convert.ToInt32(newCoord);
         }
@@ -79,20 +82,20 @@ namespace Proyecto_Graficacion.Unidad2
         {
             double Cos = Math.Cos(angle);
             double Sen = Math.Sin(angle);
-            double xF = 0;
-            double yF = 0;
-            double newCoord = yF + ((numY - yF) * Cos) + ((numX - xF) * Sen);
+            double xF = 301;
+            double yF = 301;
+            double newCoord = (yF + ((numY - yF) * Cos)) + ((numX - xF) * Sen);
 
             return Convert.ToInt32(newCoord);
         }
 
         private void btnPruebas_Click(object sender, EventArgs e)
         {
-            Rectangle cuadro1 = new Rectangle(-150, -150, 300, 300);
-            int x = formulaX(cuadro1.X, cuadro1.Y);
-            int y = formulaY(cuadro1.X, cuadro1.Y);
+            //Rectangle cuadro1 = new Rectangle(-150, -150, 300, 300);
+            //int x = formulaX(cuadro1.X, cuadro1.Y, );
+            //int y = formulaY(cuadro1.X, cuadro1.Y);
 
-            MessageBox.Show($"{x} + {y}");
+            //MessageBox.Show($"{x} + {y}");
 
         }
     }
