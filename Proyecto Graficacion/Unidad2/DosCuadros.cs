@@ -49,13 +49,13 @@ namespace Proyecto_Graficacion.Unidad2
             int angle = 5;
             dibujo.DrawPolygon(pluma, cuadro1);
             Thread.Sleep(20);
-            for (int i = 0; i < 30; i++)
+            for (int i = 1; i < 30; i++)
             {
                 dibujo.Clear(System.Drawing.ColorTranslator.FromHtml("#404040"));
-                cuadro11 = new Point(formulaX(cuadro11.X, cuadro11.Y, angle), formulaY(cuadro11.X, cuadro11.Y, angle));
-                cuadro12 = new Point(formulaX(cuadro12.X, cuadro12.Y, angle), formulaY(cuadro12.X, cuadro12.Y, angle));
-                cuadro13 = new Point(formulaX(cuadro13.X, cuadro13.Y, angle), formulaY(cuadro13.X, cuadro13.Y, angle));
-                cuadro14 = new Point(formulaX(cuadro14.X, cuadro14.Y, angle), formulaY(cuadro14.X, cuadro14.Y, angle));
+                cuadro11 = new Point(formulaX(cuadro11.X, cuadro11.Y, angle * i), formulaY(cuadro11.X, cuadro11.Y, angle * i));
+                cuadro12 = new Point(formulaX(cuadro12.X, cuadro12.Y, angle*i), formulaY(cuadro12.X, cuadro12.Y, angle * i));
+                cuadro13 = new Point(formulaX(cuadro13.X, cuadro13.Y, angle * i), formulaY(cuadro13.X, cuadro13.Y, angle * i));
+                cuadro14 = new Point(formulaX(cuadro14.X, cuadro14.Y, angle * i), formulaY(cuadro14.X, cuadro14.Y, angle * i));
                 cuadro1[0] = cuadro11;
                 cuadro1[1] = cuadro12;
                 cuadro1[2] = cuadro13;
