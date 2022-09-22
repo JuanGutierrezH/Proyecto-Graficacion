@@ -71,5 +71,12 @@ namespace Proyecto_Graficacion
             Reloj reloj = new Reloj();
             reloj.Show();
         }
+
+        private void dosCuadrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DosCuadros dosCuadros = new DosCuadros();
+            dosCuadros.Show();
+        }
     }
 }

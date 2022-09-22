@@ -84,6 +84,12 @@
     <Compile Include="Unidad1\TrackBar.Designer.cs">
       <DependentUpon>TrackBar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Unidad2\DosCuadros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Unidad2\DosCuadros.Designer.cs">
+      <DependentUpon>DosCuadros.cs</DependentUpon>
+    </Compile>
     <Compile Include="Unidad2\Escalamiento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Unidad1\TrackBar.resx">
       <DependentUpon>TrackBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Unidad2\DosCuadros.resx">
+      <DependentUpon>DosCuadros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Unidad2\Escalamiento.resx">
       <DependentUpon>Escalamiento.cs</DependentUpon>
