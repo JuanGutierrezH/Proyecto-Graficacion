@@ -89,8 +89,9 @@ namespace Proyecto_Graficacion.Unidad2
                 cuadro1[1] = cuadro12;
                 cuadro1[2] = cuadro13;
                 cuadro1[3] = cuadro14;
-                dibujo.DrawEllipse(pluma, 2 + i, 2, 1, 1);
                 dibujo.FillPolygon(brush, cuadro1);
+                dibujo.DrawEllipse(pluma, 2 + i, 2, 1, 1);
+                
                 Thread.Sleep(500);
             }
         }
@@ -121,8 +122,9 @@ namespace Proyecto_Graficacion.Unidad2
                 cuadro2[1] = cuadro22;
                 cuadro2[2] = cuadro23;
                 cuadro2[3] = cuadro24;
-                dibujoGraficacion.DrawEllipse(pluma2, 2 + i, 2, 1, 1);
+                
                 dibujoGraficacion.DrawPolygon(pluma2, cuadro2);
+                dibujoGraficacion.DrawEllipse(pluma2, 2 + i, 2, 1, 1);
                 Thread.Sleep(500);
             }
         }
