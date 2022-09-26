@@ -19,12 +19,13 @@ namespace Proyecto_Graficacion.Unidad2
 
         Graphics dibujo;
         Pen pluma = new Pen(Color.Black, 3);
-        Brush brush = new SolidBrush(Color.Black);
+        Brush brush = new SolidBrush(ColorTranslator.FromHtml("#404040"));
+
 
 
         private void Reloj_Load(object sender, EventArgs e)
         {
-            dibujo = this.CreateGraphics();
+            dibujo = pictureBox1.CreateGraphics();
         }
 
         private void Reloj_Click(object sender, EventArgs e)
@@ -39,7 +40,18 @@ namespace Proyecto_Graficacion.Unidad2
         private void btnIniciar_Click(object sender, EventArgs e)
         {
             dibujo.TranslateTransform(301, 301);
-            dibujo.FillEllipse(brush, -200, -200, 400, 400);
+            dibujo.FillEllipse(brush, -100, -180, 200, 200);
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Reloj_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Menu mainMenu = new Menu();
+            mainMenu.Show();
         }
     }
 }

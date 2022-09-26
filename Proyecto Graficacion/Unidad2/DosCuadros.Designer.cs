@@ -62,6 +62,7 @@
             this.Controls.Add(this.btnDibujar);
             this.Name = "DosCuadros";
             this.Text = "DosCuadros";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DosCuadros_FormClosing);
             this.Load += new System.EventHandler(this.DosCuadros_Load);
             this.ResumeLayout(false);
 

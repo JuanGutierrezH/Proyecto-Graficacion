@@ -74,7 +74,7 @@ namespace Proyecto_Graficacion.Unidad2
 
             
 
-            int angle = 20;
+            int angle = 1;
             dibujo.DrawPolygon(pluma, cuadro1);
             bool rotar = true;
 
@@ -142,6 +142,12 @@ namespace Proyecto_Graficacion.Unidad2
 
             //MessageBox.Show($"{x} + {y}");
 
+        }
+
+        private void DosCuadros_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Menu mainMenu = new Menu();
+            mainMenu.Show();
         }
     }
 }
