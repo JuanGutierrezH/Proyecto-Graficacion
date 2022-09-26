@@ -16,9 +16,11 @@ namespace Proyecto_Graficacion.Unidad2
         {
             InitializeComponent();
         }
-
+        
         Graphics dibujo;
-        Pen pluma = new Pen(Color.Black, 3);
+        Pen plumaHora = new Pen(Color.Black, 8);
+        Pen plumaMinutos = new Pen(Color.Black, 6);
+        Pen plumaSegundos = new Pen(Color.Red, 2);
         Brush brush = new SolidBrush(ColorTranslator.FromHtml("#404040"));
 
 
@@ -32,15 +34,18 @@ namespace Proyecto_Graficacion.Unidad2
         {
             
 
-
         }
-
-        
 
         private void btnIniciar_Click(object sender, EventArgs e)
         {
-            dibujo.TranslateTransform(301, 301);
-            dibujo.FillEllipse(brush, -100, -180, 200, 200);
+            PointF hora = new PointF(0, 0);
+            PointF hora2 = new PointF(0, 120);
+            PointF minutero = new PointF(0, 0);
+            PointF minutero2 = new PointF(150, 0);
+            dibujo.TranslateTransform(290, 280);
+            dibujo.FillEllipse(brush, -100, -170, 200, 200);
+            dibujo.DrawLine(plumaMinutos, minutero, minutero2);
+            dibujo.DrawLine(plumaHora, hora, hora2);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

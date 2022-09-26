@@ -41,50 +41,46 @@ namespace Proyecto_Graficacion.Unidad2
             y.Start();
         }
 
-        private int formulaX(int numX, int numY, int angle, int xF, int yF)
+        private float formulaX(float numX, float numY, int angle, float xF, float yF)
         {
             float Cos = (float)Math.Cos(angle);
             float Sen = (float)Math.Sin(angle);
             float newCoord = (xF + (numX - xF) * Cos - (numY - yF) * Sen);
 
-            return Convert.ToInt32(newCoord);
+            return newCoord;
         }
 
-        private int formulaY(int numX, int numY, int angle, int xF, int yF)
+        private float formulaY(float numX, float numY, int angle, float xF, float yF)
         {
             float Cos = (float)Math.Cos(angle);
             float Sen = (float)Math.Sin(angle);
             float newCoord = (yF + (numY - yF) * Cos + (numX - xF) * Sen);
 
-            return Convert.ToInt32(newCoord);
+            return newCoord;
         }
         
         private void DibujarCuadros()
         {
-            Point cuadro11 = new Point(161, 186);
-            Point cuadro12 = new Point(425, 186);
-            Point cuadro13 = new Point(425, 452);
-            Point cuadro14 = new Point(161, 452);
-            Point[] cuadro1 = { cuadro11, cuadro12, cuadro13, cuadro14 };
+            PointF cuadro11 = new Point(161, 186);
+            PointF cuadro12 = new Point(425, 186);
+            PointF cuadro13 = new Point(425, 452);
+            PointF cuadro14 = new Point(161, 452);
+            PointF[] cuadro1 = { cuadro11, cuadro12, cuadro13, cuadro14 };
 
-            
+            float yF = ((cuadro14.Y - cuadro11.Y) / 2) + cuadro11.Y;
+            float xF = ((cuadro12.X - cuadro11.X) / 2) + cuadro11.X;
 
-            int yF = ((cuadro14.Y - cuadro11.Y) / 2) + cuadro11.Y;
-            int xF = ((cuadro12.X - cuadro11.X) / 2) + cuadro11.X;
-
-            
-
-            int angle = 1;
+            int angle = 360;
             dibujo.DrawPolygon(pluma, cuadro1);
             bool rotar = true;
 
             for (int i = 1; i < 360; i++)
             {
                 dibujo.Clear(ColorTranslator.FromHtml("#404040"));
-                cuadro11 = new Point(formulaX(cuadro11.X, cuadro11.Y, angle, xF, yF), formulaY(cuadro11.X, cuadro11.Y, angle, xF, yF));
-                cuadro12 = new Point(formulaX(cuadro12.X, cuadro12.Y, angle, xF, yF), formulaY(cuadro12.X, cuadro12.Y, angle, xF, yF));
-                cuadro13 = new Point(formulaX(cuadro13.X, cuadro13.Y, angle, xF, yF), formulaY(cuadro13.X, cuadro13.Y, angle, xF, yF));
-                cuadro14 = new Point(formulaX(cuadro14.X, cuadro14.Y, angle, xF, yF), formulaY(cuadro14.X, cuadro14.Y, angle, xF, yF));
+                cuadro11 = new PointF(formulaX(cuadro11.X, cuadro11.Y, angle, xF, yF), formulaY(cuadro11.X, cuadro11.Y, angle, xF, yF));
+                cuadro12 = new PointF(formulaX(cuadro12.X, cuadro12.Y, angle, xF, yF), formulaY(cuadro12.X, cuadro12.Y, angle, xF, yF));
+                cuadro13 = new PointF(formulaX(cuadro13.X, cuadro13.Y, angle, xF, yF), formulaY(cuadro13.X, cuadro13.Y, angle, xF, yF));
+                cuadro14 = new PointF(formulaX(cuadro14.X, cuadro14.Y, angle, xF, yF), formulaY(cuadro14.X, cuadro14.Y, angle, xF, yF));
                 cuadro1[0] = cuadro11;
                 cuadro1[1] = cuadro12;
                 cuadro1[2] = cuadro13;
@@ -98,26 +94,26 @@ namespace Proyecto_Graficacion.Unidad2
 
         private void DibujarCuadros2()
         {
-            Point cuadro21 = new Point(161, 186);
-            Point cuadro22 = new Point(425, 186);
-            Point cuadro23 = new Point(425, 452);
-            Point cuadro24 = new Point(161, 452);
-            Point[] cuadro2 = { cuadro21, cuadro22, cuadro23, cuadro24 };
+            PointF cuadro21 = new Point(161, 186);
+            PointF cuadro22 = new Point(425, 186);
+            PointF cuadro23 = new Point(425, 452);
+            PointF cuadro24 = new Point(161, 452);
+            PointF[] cuadro2 = { cuadro21, cuadro22, cuadro23, cuadro24 };
 
-            int yF = ((cuadro24.Y - cuadro21.Y) / 2) + cuadro21.Y;
-            int xF = ((cuadro22.X - cuadro21.X) / 2) + cuadro21.X;
+            float yF = ((cuadro24.Y - cuadro21.Y) / 2) + cuadro21.Y;
+            float xF = ((cuadro22.X - cuadro21.X) / 2) + cuadro21.X;
 
-            int angle = -20;
+            int angle = -360;
             dibujoGraficacion.DrawPolygon(pluma2, cuadro2);
             bool rotar = true;
 
             for (int i = 1; i < 360; i++)
             {
                 dibujoGraficacion.Clear(ColorTranslator.FromHtml("#404040"));
-                cuadro21 = new Point(formulaX(cuadro21.X, cuadro21.Y, angle, xF, yF), formulaY(cuadro21.X, cuadro21.Y, angle, xF, yF));
-                cuadro22 = new Point(formulaX(cuadro22.X, cuadro22.Y, angle, xF, yF), formulaY(cuadro22.X, cuadro22.Y, angle, xF, yF));
-                cuadro23 = new Point(formulaX(cuadro23.X, cuadro23.Y, angle, xF, yF), formulaY(cuadro23.X, cuadro23.Y, angle, xF, yF));
-                cuadro24 = new Point(formulaX(cuadro24.X, cuadro24.Y, angle, xF, yF), formulaY(cuadro24.X, cuadro24.Y, angle, xF, yF));
+                cuadro21 = new PointF(formulaX(cuadro21.X, cuadro21.Y, angle, xF, yF), formulaY(cuadro21.X, cuadro21.Y, angle, xF, yF));
+                cuadro22 = new PointF(formulaX(cuadro22.X, cuadro22.Y, angle, xF, yF), formulaY(cuadro22.X, cuadro22.Y, angle, xF, yF));
+                cuadro23 = new PointF(formulaX(cuadro23.X, cuadro23.Y, angle, xF, yF), formulaY(cuadro23.X, cuadro23.Y, angle, xF, yF));
+                cuadro24 = new PointF(formulaX(cuadro24.X, cuadro24.Y, angle, xF, yF), formulaY(cuadro24.X, cuadro24.Y, angle, xF, yF));
                 cuadro2[0] = cuadro21;
                 cuadro2[1] = cuadro22;
                 cuadro2[2] = cuadro23;
