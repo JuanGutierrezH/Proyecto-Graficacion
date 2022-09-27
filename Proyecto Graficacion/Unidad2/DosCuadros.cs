@@ -90,7 +90,7 @@ namespace Proyecto_Graficacion.Unidad2
                 dibujo.FillPolygon(brush, cuadro1);
                 dibujo.DrawEllipse(pluma, 2 + i, 2, 1, 1);
 
-                Thread.Sleep(500);
+                Thread.Sleep(100);
             }
         }
 

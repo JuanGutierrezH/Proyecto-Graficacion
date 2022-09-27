@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using DevExpress.Utils;
 
 namespace Proyecto_Graficacion.Unidad2
 {
@@ -21,9 +22,11 @@ namespace Proyecto_Graficacion.Unidad2
         Graphics dibujo;
         Graphics dibujo2;
         Graphics dibujo3;
-        Pen plumaHora = new Pen(Color.Black, 8);
+        Pen plumaHora = new Pen(Color.Black, 6);
         Pen plumaMinutos = new Pen(Color.Black, 6);
-        Pen plumaSegundos = new Pen(Color.Red, 2);
+        Pen plumaSegundos = new Pen(Color.Red, 6);
+        Pen plumaClear = new Pen(ColorTranslator.FromHtml("#404040"), 6);
+
         Brush brush = new SolidBrush(ColorTranslator.FromHtml("#404040"));
         Brush brush2 = new SolidBrush(ColorTranslator.FromHtml("#404040"));
         Brush brush3 = new SolidBrush(ColorTranslator.FromHtml("#404040"));
@@ -56,13 +59,14 @@ namespace Proyecto_Graficacion.Unidad2
 
         private void btnIniciar_Click(object sender, EventArgs e)
         {
-          
             Thread t = new Thread(dibujarHoras);
             t.Start();
             Thread y = new Thread(dibujarMinutos);
             y.Start();
             Thread x = new Thread(dibujarSegundos);
             x.Start();
+
+
 
         }
 
@@ -73,49 +77,65 @@ namespace Proyecto_Graficacion.Unidad2
 
         private void dibujarHoras()
         {
+            int j = 0;
             float anguloHoras = 360 / 12;
-            for (int i = 0; i < 200; i++)
+            for (int i = 0; i < 999999999; i++)
             {
-                Thread.Sleep(3600000);
-                //dibujo.Clear(ColorTranslator.FromHtml("#404040"));
-                dibujo.FillEllipse(brush, -150, -150, 300, 300);
-                hora = new PointF(formulaX(hora.X, hora.Y, anguloHoras), formulaY(hora.X, hora.Y, anguloHoras));
-                hora2 = new PointF(formulaX(hora2.X, hora2.Y, anguloHoras), formulaY(hora2.X, hora2.Y, anguloHoras));
-                dibujo.DrawLine(plumaHora, hora, hora2);
-                
+                if (j != 360000)
+                {
+                    dibujo.DrawLine(plumaHora, hora, hora2);
+                    Thread.Sleep(1000);
+                    j = j + 1000;
+                }
+                else
+                {
+                    dibujo.DrawLine(plumaClear, hora, hora2);
+                    hora = new PointF(formulaX(hora.X, hora.Y, anguloHoras), formulaY(hora.X, hora.Y, anguloHoras));
+                    hora2 = new PointF(formulaX(hora2.X, hora2.Y, anguloHoras), formulaY(hora2.X, hora2.Y, anguloHoras));
+                    j = 0;
+                }
+
             }
             
         }
         private void dibujarSegundos()
         {
-            float anguloSegundos = 360 / 60;
-            for (int i = 0; i < 200; i++)
+            float anguloSegundos = -360 / 60;
+
+            for (int i = 0; i < 999999999; i++)
             {
+                dibujo3.DrawLine(plumaSegundos, segundero, segundero2);
                 Thread.Sleep(1000);
-                //dibujo3.Clear(ColorTranslator.FromHtml("#404040"));
-                dibujo3.FillEllipse(brush3, -150,-150, 300, 300);
+                dibujo3.DrawLine(plumaClear, segundero, segundero2);
+
                 segundero = new PointF(formulaX(segundero.X, segundero.Y, anguloSegundos), formulaY(segundero.X, segundero.Y, anguloSegundos));
                 segundero2 = new PointF(formulaX(segundero2.X, segundero2.Y, anguloSegundos), formulaY(segundero2.X, segundero2.Y, anguloSegundos));
-                dibujo3.DrawLine(plumaSegundos, segundero, segundero2);
-                
             }
-            
         }
 
         private void dibujarMinutos()
         {
             float anguloMinutos = 360 / 60;
-            for (int i = 0; i < 200; i++)
+            int j = 0;
+            for (int i = 0; i < 999999999; i++)
             {
-                Thread.Sleep(60000);
-                //dibujo2.Clear(ColorTranslator.FromHtml("#404040"));
-                dibujo2.FillEllipse(brush2, -150, -150, 300, 300);
-                minutero = new PointF(formulaX(minutero.X, minutero.Y, anguloMinutos), formulaY(minutero.X, minutero.Y, anguloMinutos));
-                minutero2 = new PointF(formulaX(minutero2.X, minutero2.Y, anguloMinutos), formulaY(minutero2.X, minutero2.Y, anguloMinutos));
-                dibujo2.DrawLine(plumaMinutos, minutero, minutero2);
-                
+                if (j != 60000)
+                {
+                    Thread.Sleep(1000);
+
+                    dibujo2.DrawLine(plumaMinutos, minutero, minutero2);
+                    //var guardar = dibujo.Save();
+                    j = j + 1000;
+                }
+                else
+                {
+                    dibujo2.DrawLine(plumaClear, minutero, minutero2);
+                    minutero = new PointF(formulaX(minutero.X, minutero.Y, anguloMinutos), formulaY(minutero.X, minutero.Y, anguloMinutos));
+                    minutero2 = new PointF(formulaX(minutero2.X, minutero2.Y, anguloMinutos), formulaY(minutero2.X, minutero2.Y, anguloMinutos));
+                    j = 0;
+                }
             }
-            
+
         }
 
         private void Reloj_FormClosing(object sender, FormClosingEventArgs e)
