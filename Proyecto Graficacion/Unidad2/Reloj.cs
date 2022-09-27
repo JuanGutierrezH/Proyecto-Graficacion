@@ -77,8 +77,12 @@ namespace Proyecto_Graficacion.Unidad2
 
         private void dibujarHoras()
         {
+            float cosHoras = 0.978147f;
+            float senHoras = 0.207911f;
+
+
             int j = 0;
-            float anguloHoras = 360 / 12;
+            float anguloHoras = -360 / 12;
             for (int i = 0; i < 999999999; i++)
             {
                 if (j != 360000)
@@ -90,8 +94,8 @@ namespace Proyecto_Graficacion.Unidad2
                 else
                 {
                     dibujo.DrawLine(plumaClear, hora, hora2);
-                    hora = new PointF(formulaX(hora.X, hora.Y, anguloHoras), formulaY(hora.X, hora.Y, anguloHoras));
-                    hora2 = new PointF(formulaX(hora2.X, hora2.Y, anguloHoras), formulaY(hora2.X, hora2.Y, anguloHoras));
+                    hora = new PointF(formulaX(hora.X, hora.Y, cosHoras, senHoras), formulaY(hora.X, hora.Y, cosHoras, senHoras));
+                    hora2 = new PointF(formulaX(hora2.X, hora2.Y, cosHoras, senHoras), formulaY(hora2.X, hora2.Y, cosHoras, senHoras));
                     j = 0;
                 }
 
@@ -101,6 +105,10 @@ namespace Proyecto_Graficacion.Unidad2
         private void dibujarSegundos()
         {
             float anguloSegundos = -360 / 60;
+            float cosSegundo = 0.994521f;
+            float senSegundo = 0.104528f;
+
+
 
             for (int i = 0; i < 999999999; i++)
             {
@@ -108,14 +116,17 @@ namespace Proyecto_Graficacion.Unidad2
                 Thread.Sleep(1000);
                 dibujo3.DrawLine(plumaClear, segundero, segundero2);
 
-                segundero = new PointF(formulaX(segundero.X, segundero.Y, anguloSegundos), formulaY(segundero.X, segundero.Y, anguloSegundos));
-                segundero2 = new PointF(formulaX(segundero2.X, segundero2.Y, anguloSegundos), formulaY(segundero2.X, segundero2.Y, anguloSegundos));
+                segundero = new PointF(formulaX(segundero.X, segundero.Y, cosSegundo, senSegundo), formulaY(segundero.X, segundero.Y, cosSegundo, senSegundo));
+                segundero2 = new PointF(formulaX(segundero2.X, segundero2.Y, cosSegundo, senSegundo), formulaY(segundero2.X, segundero2.Y, cosSegundo, senSegundo));
             }
         }
 
         private void dibujarMinutos()
         {
-            float anguloMinutos = 360 / 60;
+            float anguloMinutos = -360 / 60;
+            float cosSegundo = 0.994521f;
+            float senSegundo = 0.104528f;
+
             int j = 0;
             for (int i = 0; i < 999999999; i++)
             {
@@ -130,8 +141,8 @@ namespace Proyecto_Graficacion.Unidad2
                 else
                 {
                     dibujo2.DrawLine(plumaClear, minutero, minutero2);
-                    minutero = new PointF(formulaX(minutero.X, minutero.Y, anguloMinutos), formulaY(minutero.X, minutero.Y, anguloMinutos));
-                    minutero2 = new PointF(formulaX(minutero2.X, minutero2.Y, anguloMinutos), formulaY(minutero2.X, minutero2.Y, anguloMinutos));
+                    minutero = new PointF(formulaX(minutero.X, minutero.Y, cosSegundo, senSegundo), formulaY(minutero.X, minutero.Y, cosSegundo, senSegundo));
+                    minutero2 = new PointF(formulaX(minutero2.X, minutero2.Y, cosSegundo, senSegundo), formulaY(minutero2.X, minutero2.Y, cosSegundo, senSegundo));
                     j = 0;
                 }
             }
@@ -144,19 +155,19 @@ namespace Proyecto_Graficacion.Unidad2
             mainMenu.Show();
         }
 
-        private float formulaX(float numX, float numY, float angle)
+        private float formulaX(float numX, float numY, float angle, float angle2)
         {
-            float Cos = (float)Math.Cos(angle);
-            float Sen = (float)Math.Sin(angle);
+            float Cos = angle;
+            float Sen = angle2;
             float newCoord = (xF + (numX - xF) * Cos - (numY - yF) * Sen);
 
             return newCoord;
         }
 
-        private float formulaY(float numX, float numY, float angle)
+        private float formulaY(float numX, float numY, float angle, float angle2)
         {
-            float Cos = (float)Math.Cos(angle);
-            float Sen = (float)Math.Sin(angle);
+            float Cos = angle;
+            float Sen = angle2;
             float newCoord = (yF + (numY - yF) * Cos + (numX - xF) * Sen);
 
             return newCoord;
