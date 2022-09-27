@@ -132,15 +132,6 @@ namespace Proyecto_Graficacion.Unidad2
         //    dibujoGraficacion.DrawEllipse(pluma2, 2+x, 2, 1, 1);
         //}
 
-        private void btnPruebas_Click(object sender, EventArgs e)
-        {
-            //Rectangle cuadro1 = new Rectangle(-150, -150, 300, 300);
-            //int x = formulaX(cuadro1.X, cuadro1.Y,5 );
-            //int y = formulaY(cuadro1.X, cuadro1.Y, 5);
-
-            //MessageBox.Show($"{x} + {y}");
-
-        }
 
         private void DosCuadros_FormClosing(object sender, FormClosingEventArgs e)
         {

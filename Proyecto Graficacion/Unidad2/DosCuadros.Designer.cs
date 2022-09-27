@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.btnDibujar = new System.Windows.Forms.Button();
-            this.btnPruebas = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnDibujar
@@ -42,23 +41,12 @@
             this.btnDibujar.UseVisualStyleBackColor = true;
             this.btnDibujar.Click += new System.EventHandler(this.btnDibujar_Click);
             // 
-            // btnPruebas
-            // 
-            this.btnPruebas.Location = new System.Drawing.Point(135, 24);
-            this.btnPruebas.Name = "btnPruebas";
-            this.btnPruebas.Size = new System.Drawing.Size(75, 23);
-            this.btnPruebas.TabIndex = 1;
-            this.btnPruebas.Text = "button1";
-            this.btnPruebas.UseVisualStyleBackColor = true;
-            this.btnPruebas.Click += new System.EventHandler(this.btnPruebas_Click);
-            // 
             // DosCuadros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(584, 561);
-            this.Controls.Add(this.btnPruebas);
             this.Controls.Add(this.btnDibujar);
             this.Name = "DosCuadros";
             this.Text = "DosCuadros";
@@ -71,6 +59,5 @@
         #endregion
 
         private System.Windows.Forms.Button btnDibujar;
-        private System.Windows.Forms.Button btnPruebas;
     }
 }
