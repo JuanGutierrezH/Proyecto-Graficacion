@@ -38,9 +38,10 @@
             this.traslaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.escaladoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relojToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dosCuadrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dosCuadrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.paintToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -100,7 +101,8 @@
             this.traslaciónToolStripMenuItem,
             this.escaladoToolStripMenuItem,
             this.relojToolStripMenuItem,
-            this.dosCuadrosToolStripMenuItem});
+            this.dosCuadrosToolStripMenuItem,
+            this.paintToolStripMenuItem});
             this.unidad2ToolStripMenuItem.Name = "unidad2ToolStripMenuItem";
             this.unidad2ToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.unidad2ToolStripMenuItem.Text = "Unidad 2";
@@ -126,6 +128,13 @@
             this.relojToolStripMenuItem.Text = "Reloj";
             this.relojToolStripMenuItem.Click += new System.EventHandler(this.relojToolStripMenuItem_Click);
             // 
+            // dosCuadrosToolStripMenuItem
+            // 
+            this.dosCuadrosToolStripMenuItem.Name = "dosCuadrosToolStripMenuItem";
+            this.dosCuadrosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dosCuadrosToolStripMenuItem.Text = "DosCuadros";
+            this.dosCuadrosToolStripMenuItem.Click += new System.EventHandler(this.dosCuadrosToolStripMenuItem_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -146,12 +155,12 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Juan Ramiro Gutiérrez";
             // 
-            // dosCuadrosToolStripMenuItem
+            // paintToolStripMenuItem
             // 
-            this.dosCuadrosToolStripMenuItem.Name = "dosCuadrosToolStripMenuItem";
-            this.dosCuadrosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.dosCuadrosToolStripMenuItem.Text = "DosCuadros";
-            this.dosCuadrosToolStripMenuItem.Click += new System.EventHandler(this.dosCuadrosToolStripMenuItem_Click);
+            this.paintToolStripMenuItem.Name = "paintToolStripMenuItem";
+            this.paintToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.paintToolStripMenuItem.Text = "Paint";
+            this.paintToolStripMenuItem.Click += new System.EventHandler(this.paintToolStripMenuItem_Click);
             // 
             // Menu
             // 
@@ -188,5 +197,6 @@
         private System.Windows.Forms.ToolStripMenuItem escaladoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem relojToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dosCuadrosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem paintToolStripMenuItem;
     }
 }

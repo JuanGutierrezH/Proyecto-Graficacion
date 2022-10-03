@@ -78,5 +78,12 @@ namespace Proyecto_Graficacion
             DosCuadros dosCuadros = new DosCuadros();
             dosCuadros.Show();
         }
+
+        private void paintToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Paint paint = new Paint();
+            paint.Show();
+        }
     }
 }
