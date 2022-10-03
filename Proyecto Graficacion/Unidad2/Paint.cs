@@ -26,13 +26,8 @@ namespace Proyecto_Graficacion.Unidad2
 
         private void PaletaColores_EditValueChanged(object sender, EventArgs e)
         {
-            //Color b = ColorTranslator.FromHtml(PaletaColores.EditValue.ToString());
-            //MessageBox.Show(ColorTranslator.FromHtml(PaletaColores.EditValue));
-            //Color a = PaletaColores.EditValue.ToString();
+            Color color = (Color)(PaletaColores.EditValue);
         }
 
-        private void PaletaColores2_EditValueChanged(object sender, EventArgs e)
-        {
-        }
     }
 }

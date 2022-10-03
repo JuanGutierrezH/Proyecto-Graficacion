@@ -170,7 +170,6 @@
             this.PaletaColores2.Edit = this.colorEdit2;
             this.PaletaColores2.Id = 10;
             this.PaletaColores2.Name = "PaletaColores2";
-            this.PaletaColores2.EditValueChanged += new System.EventHandler(this.PaletaColores2_EditValueChanged);
             // 
             // colorEdit2
             // 
