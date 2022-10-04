@@ -14,6 +14,11 @@ namespace Proyecto_Graficacion.Unidad2
 {
     public partial class Paint : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        Color color = Color.Black;
+        Pen pluma = new Pen(color, 3);
+        Brush brush = new SolidBrush(color);
+
+
         public Paint()
         {
             InitializeComponent();
@@ -26,7 +31,7 @@ namespace Proyecto_Graficacion.Unidad2
 
         private void PaletaColores_EditValueChanged(object sender, EventArgs e)
         {
-            Color color = (Color)(PaletaColores.EditValue);
+            color = (Color)(PaletaColores.EditValue);
         }
 
     }
