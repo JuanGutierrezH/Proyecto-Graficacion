@@ -20,7 +20,7 @@ namespace Proyecto_Graficacion.Unidad2
         Image ImagenLapiz;
         bool clicked = false;
         Point previousPoint;
-        bool clickRectiangulo;
+        bool clickRectangulo;
 
 
         public Paint()
