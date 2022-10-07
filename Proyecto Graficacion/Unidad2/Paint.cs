@@ -58,12 +58,22 @@ namespace Proyecto_Graficacion.Unidad2
         private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
         {
             plumaClick = true;
-            pluma = new Pen(Color.Black, (float)tamano.Value);
+            try
+            {
+                pluma.Color = (Color)(PaletaColores3.EditValue);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
+            pluma.Width = (float)tamano.Value;
         }
         
         private void PaletaColores2_EditValueChanged(object sender, EventArgs e)
         {
-            pluma = new Pen((Color)(PaletaColores2.EditValue), (float)tamano.Value);
+            pluma = new Pen((Color)(PaletaColores3.EditValue), (float)tamano.Value);
             //color = (Color)(PaletaColores2.EditValue);
             //pluma.Color = color;
         }
@@ -93,6 +103,7 @@ namespace Proyecto_Graficacion.Unidad2
         private void Paint_Load(object sender, EventArgs e)
         {
             dibujo = this.CreateGraphics();
+            PaletaColores3.EditValue = Color.Black;
         }
 
         private void Paint_Paint(object sender, PaintEventArgs e)
