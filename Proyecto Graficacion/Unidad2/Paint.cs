@@ -63,7 +63,7 @@ namespace Proyecto_Graficacion.Unidad2
         
         private void PaletaColores2_EditValueChanged(object sender, EventArgs e)
         {
-            pluma = new Pen((Color)(PaletaColores2.EditValue), 3);
+            pluma = new Pen((Color)(PaletaColores2.EditValue), (float)tamano.Value);
             //color = (Color)(PaletaColores2.EditValue);
             //pluma.Color = color;
         }
@@ -82,6 +82,8 @@ namespace Proyecto_Graficacion.Unidad2
             Rectangle targetBounds = this.ClientRectangle;
             var guardar = new Bitmap(this.Width, this.Height);
             this.DrawToBitmap(guardar, targetBounds);
+            saveFileDialog1.Filter = "Files | *.jpg; *.jpeg; *.png";
+            saveFileDialog1.DefaultExt = "jpg";
             saveFileDialog1.ShowDialog();
             string ruta = saveFileDialog1.FileName;
 
