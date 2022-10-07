@@ -45,6 +45,10 @@ namespace Proyecto_Graficacion.Unidad2
         Point hexagono5;
         Point hexagono6;
         bool clickHexagono = false;
+        bool linea = false;
+        bool clickLinea = false;
+        Point linea1;
+        Point linea2;
 
         public Paint()
         {
@@ -251,6 +255,28 @@ namespace Proyecto_Graficacion.Unidad2
                     hexagono = false;
                 }
             }
+            if (linea)
+            {
+                if (clickLinea == false)
+                {
+                    linea1 = e.Location;
+                    clickLinea = true;
+                }
+                else
+                {
+                    linea2 = e.Location;
+
+                    clickLinea = false;
+                    Point[] lineaDibujo = { linea1, linea2 };
+
+                    using (Graphics g = Graphics.FromImage(ImagenLapiz))
+                    {
+                        g.DrawPolygon(pluma, lineaDibujo);
+                        this.Invalidate();
+                    }
+                    linea = false;
+                }
+            }
         }
 
         private void barButtonItem4_ItemClick(object sender, ItemClickEventArgs e)
@@ -286,6 +312,11 @@ namespace Proyecto_Graficacion.Unidad2
         private void barButtonItem8_ItemClick(object sender, ItemClickEventArgs e)
         {
             hexagono = true;
+        }
+
+        private void barButtonItem13_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            linea = true;
         }
     }
 }
