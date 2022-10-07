@@ -16,12 +16,14 @@ namespace Proyecto_Graficacion.Unidad2
     public partial class Paint : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         Pen pluma = new Pen(ColorTranslator.FromHtml("#F0F0F0"), 0);
+        Image guardar;
         Brush brush = new SolidBrush(Color.Black);
         Image ImagenLapiz;
         bool clicked = false;
         Point previousPoint;
         bool clickRectangulo;
-
+        Point bound1 = new Point(0, 0);
+        Point bound2 = new Point(0, 0);
 
         public Paint()
         {
@@ -44,10 +46,13 @@ namespace Proyecto_Graficacion.Unidad2
         {
             openFileDialog1.ShowDialog();
             string ruta = openFileDialog1.FileName;
+
+            ImagenLapiz = new Bitmap(ruta);
         }
 
         private void barButtonItem10_ItemClick(object sender, ItemClickEventArgs e)
         {
+            guardar = this.DrawToBitmap(ImagenLapiz);
             saveFileDialog1.ShowDialog();
             string ruta = saveFileDialog1.FileName;
 
